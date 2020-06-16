@@ -1,0 +1,86 @@
+%!
+/MainFont{
+/Chicago-Oblique findfont 15 scalefont
+} def
+/SubFont{
+/Chicago findfont 8 scalefont
+} def
+
+/cardCase {
+250 0 rlineto
+0 125 rlineto
+-250 0 rlineto
+closepath
+0.5 setlinewidth
+stroke
+grestore
+} def
+
+/title {
+40 85 rmoveto
+MainFont setfont
+1 0 0 setrgbcolor
+(Post)
+show
+0 1 0 setrgbcolor
+(Script) 
+show
+0 0 1 setrgbcolor
+( Programmer)
+show
+grestore
+} def
+
+/name {
+148 65 rmoveto
+SubFont setfont
+(Park Jae Hyoung)
+show
+grestore
+} def
+
+/nameCard {
+moveto
+gsave
+gsave
+gsave
+cardCase
+title
+name
+graphicDesign
+} def
+
+/flowerleaf {
+0 0 5 5 10 0 15 -5 curveto
+currentpoint translate
+-216 rotate 
+} def
+
+/flower {
+30 30 rmoveto
+currentpoint translate
+0 1 4 {flowerleaf} for
+0 setlinejoin
+closepath
+0.5 setlinewidth
+1 0 1 setrgbcolor
+gsave
+stroke
+} def
+
+/graphicDesign {
+0 1 8{0.9 0.9 scale -8 rotate flower grestore} for
+grestore
+} def
+
+/OnDraw {
+30 330 nameCard
+310 330 nameCard
+30 480 nameCard
+310 480 nameCard
+30 630 nameCard
+310 630 nameCard
+showpage
+} def
+
+OnDraw
